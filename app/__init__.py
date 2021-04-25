@@ -10,8 +10,7 @@ app = Flask(__name__)
 def home(url):
     req = requests.get(url, stream=True)
     print(req.headers)
-    response = Response(stream_with_context(req.iter_content(chunk_size=1024)),
-                        content_type=req.headers['content-type'])
+    response = Response(stream_with_context(req.iter_content(chunk_size=1024)), content_type='text/html')
     response.headers["Content-Disposition"] = "attachment; filename=download.txt"
     return response
 
