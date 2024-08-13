@@ -4,7 +4,7 @@ import sys
 
 
 if len(sys.argv) < 2:
-    print("Usage: pseudo.py url <output_path>")
+    print("Usage: get.py url <output_path>")
     exit(1)
 
 proxy_url = os.getenv('PROXY_URL', 'http://localhost:5001')
