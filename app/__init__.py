@@ -7,6 +7,11 @@ import requests
 app = Flask(__name__)
 
 
+@app.route('/healthcheck')
+def healthcheck():
+    return 'ok'
+
+
 @app.route('/<path:url>')
 def home(url):
     req = requests.get(url, stream=True)
